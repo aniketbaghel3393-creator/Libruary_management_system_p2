@@ -34,12 +34,13 @@ The main objectives of this project are:
 
 Stores information about books available in the library.
 
-* `book_id` (Primary Key)
-* `title`
+* `isbn`  (PRIMARY KEY),
+* `book_title` 
+* `category` 
+* `rental_price` 
+* `status` 
 * `author`
-* `category`
-* `published_year`
-* `available_copies`
+* `publisher` 
 
 ### 2️⃣ Members Table
 
@@ -47,19 +48,20 @@ Stores library member details.
 
 * `member_id` (Primary Key)
 * `member_name`
-* `email`
-* `phone`
-* `membership_date`
+* `member_address`
+* `reg_date`
 
-### 3️⃣ Issued_Books Table
+
+### 3️⃣ Issued_Status Table
 
 Tracks which books are issued to members.
 
 * `issue_id` (Primary Key)
-* `book_id` (Foreign Key)
-* `member_id` (Foreign Key)
-* `issue_date`
-* `due_date`
+* `issued_member_id` (Foreign Key)
+* `issued_book_name`
+* `issued_date`
+* `issued_book_isbn` (Foreign Key)
+* `issued_emp_id` (Foreign Key)
 
 ### 4️⃣ Return_Status Table
 
@@ -67,8 +69,29 @@ Tracks book return information.
 
 * `return_id` (Primary Key)
 * `issue_id` (Foreign Key)
+* `return_book_name` 
 * `return_date`
-* `fine_amount`
+* `return_book_isbn` (Foreign Key)
+
+### 5️⃣ Branch Table
+
+Divide branch for different type of book information.
+
+* `branch_id` (Primary Key)
+* `manager_id`
+* `branch_address`
+* `Contact_no`
+
+### 6️⃣ Employees Table 
+
+Stores employees information about libruary.
+
+* `emp_id` (Primary Key)
+* `emp_name`
+* `position`
+* `salary`
+* `branch_id` (Foreign Key)
+
 
 ---
 
