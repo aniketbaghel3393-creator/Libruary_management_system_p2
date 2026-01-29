@@ -34,7 +34,7 @@ The main objectives of this project are:
 
 Stores information about books available in the library.
 
-* `isbn`  (PRIMARY KEY),
+* `isbn`  (Primary Key),
 * `book_title` 
 * `category` 
 * `rental_price` 
